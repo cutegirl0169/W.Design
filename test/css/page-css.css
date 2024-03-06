@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明黑色背景 */
+    margin: 0;
+    padding: 0;
+}
+
+h1 a {
+    color: white; /* 設置連結文字顏色為白色 */
+    text-decoration: none;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* 在每一行左右對齊 */
+    align-items: flex-start;
+    /* 在每一行頂部對齊 */
+}
+
+.portfolio-item {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: calc(50% - 10px);
+    /* 每一列佔據 1/3，考慮間隔 */
+    height: 400px;
+    /* 固定高度 */
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item img {
+    width: 100%;
+    /* 圖片寬度填滿父容器 */
+    height: 100%;
+    /* 圖片高度填滿父容器 */
+    object-fit: cover;
+    /* 將圖片填滿父容器 */
+    transition: transform 0.3s ease;
+}
+
+.preview {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    /* 預覽圖片初始狀態隱藏 */
+    transition: transform 0.3s ease;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.preview img {
+    max-width: 100vw;
+    /* 最大寬度填滿視窗 */
+    max-height: 100vh;
+    /* 最大高度填滿視窗 */
+    object-fit: contain;
+    /* 保持圖片比例，完整呈現 */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li::after {
+    content: '';
+    position: absolute;
+    right: -5px; 
+    /* 距離右邊緣的距離 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px; 
+    /* 分隔線寬度 */
+    height: 80%; 
+    /* 分隔線高度 */
+    background-color: rgba(255, 255, 255, 0.5); 
+    /* 分隔線顏色 */
+}
+
+nav ul li:last-child::after {
+    display: none; 
+    /* 最後一個選單項目不顯示分隔線 */
+}
+
+nav ul li {
+    margin-right: 10px;
+    position: relative;
+    transition: transform 0.3s ease; 
+    /* 添加移入移出效果 */
+}
+
+nav ul li:hover {
+    transform: scale(1.1); 
+    /* 移入時放大1.1倍 */
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+    /* 添加背景色過渡效果 */
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
